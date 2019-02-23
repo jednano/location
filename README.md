@@ -1,4 +1,4 @@
-# location
+# @jedmao/location
 
 [![NPM version](http://img.shields.io/npm/v/@jedmao/location.svg?style=flat)](https://www.npmjs.org/package/@jedmao/location)
 [![npm license](http://img.shields.io/npm/l/@jedmao/location.svg?style=flat-square)](https://www.npmjs.org/package/@jedmao/location)
@@ -11,7 +11,7 @@
 
 [![npm](https://nodei.co/npm/@jedmao/location.svg?downloads=true)](https://nodei.co/npm/@jedmao/location/)
 
-A Location class that implements the Location interface of the Web API.
+A `Location` class that implements the [`Location interface of the Web API`](https://developer.mozilla.org/en-US/docs/Web/API/Location).
 
 ## Installation
 
@@ -21,4 +21,11 @@ npm i @jedmao/location
 
 ## Usage
 
-<!-- TODO -->
+```ts
+import Location from '@jedmao/location'
+
+const loc = new Location('http://foo.com/')
+loc.assign('http://bar.com/')
+loc.replace('http://baz.com/')
+loc.reload()
+```
