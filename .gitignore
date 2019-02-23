@@ -1,0 +1,6 @@
+*.log
+npm-debug.log*
+location-*
+coverage
+node_modules/
+dist/

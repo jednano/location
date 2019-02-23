@@ -1,0 +1,9 @@
+{
+  "generator-jed": {
+    "promptValues": {
+      "githubUsername": "jedmao",
+      "gitName": "Jed Mao",
+      "gitEmail": "jedmao@outlook.com"
+    }
+  }
+}
