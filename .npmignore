@@ -1,0 +1,7 @@
+node_modules/
+coverage/
+location-*
+.travis.yml
+*.ts
+!*.d.ts
+ts*.json
