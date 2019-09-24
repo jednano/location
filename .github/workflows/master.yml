@@ -20,16 +20,19 @@ jobs:
           - macOS-latest
 
     steps:
-      - run: git config --global core.autocrlf false
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
+      - name: Preserve line endings
+        run: git config --global core.autocrlf false
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Setup Node
+        uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node }}
-      - name: npm install and test/cover
+      - name: Install & test/cover
         run: npm install && npm run cover
         env:
           CI: true
-      - name: upload coverage report
+      - name: Upload coverage report
         if: success()
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
@@ -40,11 +43,19 @@ jobs:
     needs: test
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Setup Node
+        uses: actions/setup-node@v1
         with:
           node-version: 10
-      - env:
+      - name: Install
+        env:
+          CI: true
+        run: npm install
+      - name: Semantic Release
+        if: success()
+        env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npx semantic-release
