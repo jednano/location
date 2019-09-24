@@ -6,7 +6,7 @@ import { WebLocation } from './types'
  * Both the `Document` and `Window` interface have such a linked `Location`,
  * accessible via `Document.location` and `Window.location` respectively.
  */
-export default class Location extends URL implements WebLocation {
+class Location extends URL implements WebLocation {
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	public ancestorOrigins = ([] as any) as DOMStringList
 
@@ -31,10 +31,11 @@ export default class Location extends URL implements WebLocation {
 		 * If `true`, the page will always reload from the server. If `false` or
 		 * unspecified, the browser may reload the page from its HTTP cache.
 		 */
-		// @ts-ignore
 		// eslint-disable-next-line @typescript-eslint/no-unused-vars
-		forcedReload = false,
-	) {}
+		_forcedReload = false,
+	) {
+		return
+	}
 
 	/**
 	 * Replaces the current resource with the one at the provided URL.
@@ -52,5 +53,4 @@ export default class Location extends URL implements WebLocation {
 	}
 }
 
-// @ts-ignore
-module.exports = Object.assign(exports.default, exports)
+export = Location

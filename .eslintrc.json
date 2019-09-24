@@ -34,12 +34,6 @@
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/indent": "off",
     "@typescript-eslint/no-explicit-any": "error",
-    "@typescript-eslint/no-object-literal-type-assertion": [
-      "error",
-      {
-        "allowAsParameter": true
-      }
-    ],
     "@typescript-eslint/no-this-alias": [
       "error",
       {

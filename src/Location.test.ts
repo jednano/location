@@ -1,14 +1,10 @@
 /* eslint-env node, jest */
-import Location from './Location'
+import Location = require('./Location')
 
 describe('Location class', () => {
-	it('exports a CommonJS module for npm compatibility', () => {
+	it('exports a CommonJS module', () => {
+		// eslint-disable-next-line @typescript-eslint/no-var-requires
 		expect(require('./Location')).toBe(Location)
-	})
-
-	it('has a circular default prop', () => {
-		// @ts-ignore
-		expect(Location.default.default).toBe(Location)
 	})
 
 	it('assigns', () => {

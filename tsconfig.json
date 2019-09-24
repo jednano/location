@@ -6,8 +6,7 @@
     "moduleResolution": "node",
     "outDir": "dist",
     "rootDir": "src",
-    "target": "esnext"
+    "target": "es2017"
   },
-  "include": ["src/**/*.ts"],
-  "exclude": ["src/**/*.test.ts"]
+  "include": ["src/**/*.ts"]
 }
