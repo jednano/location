@@ -1,6 +1,6 @@
 *.log
 npm-debug.log*
-location-*
+jedmao-location-*
 coverage
 node_modules/
 dist/

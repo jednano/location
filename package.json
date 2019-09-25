@@ -4,6 +4,9 @@
   "description": "A Location class that implements the Location interface of the Web API.",
   "main": "dist/Location.js",
   "types": "dist/Location.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "clean": "rimraf coverage dist *.log* location-*",
     "lint": "eslint src/**/*.ts",
