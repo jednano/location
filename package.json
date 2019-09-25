@@ -1,6 +1,6 @@
 {
   "name": "@jedmao/location",
-  "version": "0.0.0-development",
+  "version": "2.0.1",
   "description": "A Location class that implements the Location interface of the Web API.",
   "main": "dist/Location.js",
   "types": "dist/Location.d.ts",
