@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.4](https://github.com/jedmao/location/compare/v2.0.3...v2.0.4) (2019-09-25)
+
+
+### Bug Fixes
+
+* add docs, tests ([36ad608](https://github.com/jedmao/location/commit/36ad608))
+
 ## [2.0.3](https://github.com/jedmao/location/compare/v2.0.2...v2.0.3) (2019-09-25)
 
 
