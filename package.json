@@ -44,6 +44,10 @@
       "path": "./node_modules/cz-conventional-changelog"
     }
   },
+  "release": {
+    "extends": "@jedmao/semantic-release-npm-github-config",
+    "branch": "master"
+  },
   "jest": {
     "preset": "ts-jest",
     "testEnvironment": "node",
