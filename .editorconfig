@@ -11,6 +11,6 @@ end_of_line = lf
 [*.md]
 trim_trailing_whitespace = false
 
-[{*.json,*.yml}]
+[{*.json,*.md,*.yml}]
 indent_style = space
 indent_size = 2

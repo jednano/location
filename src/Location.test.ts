@@ -1,4 +1,4 @@
-/* eslint-env node, jest */
+/* eslint-env browser, node, jest */
 import Location = require('./Location')
 
 describe('Location class', () => {
@@ -28,5 +28,31 @@ describe('Location class', () => {
 		loc.replace(newUrl)
 
 		expect(loc.toString()).toBe(newUrl)
+	})
+
+	describe('README examples', () => {
+		const { location: savedLocation } = window
+
+		beforeAll(() => {
+			delete window.location
+		})
+
+		beforeEach(() => {
+			window.location = new Location('http://test/')
+		})
+
+		afterAll(() => {
+			window.location = savedLocation
+		})
+
+		it('assigns /login', () => {
+			const assign = jest
+				.spyOn(window.location, 'assign')
+				.mockImplementationOnce(() => {})
+
+			window.location.assign('/login')
+
+			expect(assign).toHaveBeenCalledWith('/login')
+		})
 	})
 })

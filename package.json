@@ -68,6 +68,9 @@
         "statements": 100
       }
     },
+    "globals": {
+      "window": {}
+    },
     "watchPlugins": [
       "jest-watch-typeahead/filename",
       "jest-watch-typeahead/testname"
@@ -89,7 +92,7 @@
   "devDependencies": {
     "@commitlint/cli": "^8.2.0",
     "@commitlint/config-conventional": "^8.2.0",
-    "@jedmao/semantic-release-npm-github-config": "^1.0.6",
+    "@jedmao/semantic-release-npm-github-config": "^1.0.7",
     "@jedmao/tsconfig": "^0.3.0",
     "@types/jest": "^24.0.18",
     "@types/node": "^12.7.7",
