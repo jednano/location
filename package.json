@@ -2,16 +2,20 @@
   "name": "@jedmao/location",
   "version": "2.0.4",
   "description": "A Location class that implements the Location interface of the Web API.",
-  "main": "dist/Location.js",
-  "types": "dist/Location.d.ts",
+  "main": "dist/LocationMock.js",
+  "module": "dist/esm/LocationMock.js",
+  "types": "dist/LocationMock.d.ts",
   "files": [
-    "dist"
+    "dist/LocationMock*",
+    "dist/esm/LocationMock.js"
   ],
   "scripts": {
     "clean": "rimraf coverage dist *.log* location-*",
     "lint": "eslint src/**/*.ts",
     "prebuild": "rimraf dist",
-    "build": "tsc -p tsconfig.build.json",
+    "build": "npm run build:cjs && npm run build:esm",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build:esm": "tsc -p tsconfig.esm.json",
     "precover": "rimraf coverage",
     "cover": "jest --coverage",
     "pretest": "npm run lint",
@@ -25,10 +29,11 @@
     }
   },
   "lint-staged": {
-    "src/**/*.{ts,tsx,json,md}": [
-      "eslint --fix",
-      "prettier --write",
-      "git add"
+    "*.{ts,tsx}": [
+      "eslint --fix"
+    ],
+    "*.{json,md}": [
+      "prettier --write"
     ]
   },
   "prettier": {
@@ -79,6 +84,7 @@
   "repository": "https://github.com/jedmao/location.git",
   "keywords": [
     "location",
+    "mock",
     "web",
     "api",
     "typescript"
@@ -90,26 +96,26 @@
   },
   "homepage": "https://github.com/jedmao/location#readme",
   "devDependencies": {
-    "@commitlint/cli": "^8.2.0",
-    "@commitlint/config-conventional": "^8.2.0",
-    "@jedmao/semantic-release-npm-github-config": "^1.0.7",
-    "@jedmao/tsconfig": "^0.3.0",
-    "@types/jest": "^24.0.18",
-    "@types/node": "^12.7.7",
-    "@typescript-eslint/eslint-plugin": "^2.3.1",
-    "@typescript-eslint/parser": "^2.3.1",
-    "commitizen": "^4.0.3",
-    "cz-conventional-changelog": "^3.0.2",
-    "eslint": "^6.4.0",
-    "eslint-config-prettier": "^6.3.0",
-    "husky": "^3.0.5",
-    "jest": "^24.9.0",
-    "jest-watch-typeahead": "^0.4.0",
-    "lint-staged": "^9.3.0",
-    "prettier": "^1.18.2",
-    "rimraf": "^3.0.0",
-    "semantic-release": "^15.13.24",
-    "ts-jest": "^24.1.0",
-    "typescript": "^3.6.3"
+    "@commitlint/cli": "^8",
+    "@commitlint/config-conventional": "^8",
+    "@jedmao/semantic-release-npm-github-config": "^1",
+    "@jedmao/tsconfig": "^0.3",
+    "@types/jest": "^25",
+    "@types/node": "^13",
+    "@typescript-eslint/eslint-plugin": "^2",
+    "@typescript-eslint/parser": "^2",
+    "commitizen": "^4",
+    "cz-conventional-changelog": "^3",
+    "eslint": "^6",
+    "eslint-config-prettier": "^6",
+    "husky": "^4",
+    "jest": "^25",
+    "jest-watch-typeahead": "^0.4",
+    "lint-staged": "^10",
+    "prettier": "^1",
+    "rimraf": "^3",
+    "semantic-release": "^17",
+    "ts-jest": "^25",
+    "typescript": "^3.8"
   }
 }

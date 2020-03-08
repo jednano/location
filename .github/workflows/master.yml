@@ -29,7 +29,9 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
       - name: Install & test/cover
-        run: npm ci && npm run cover
+        run: |
+          npm ci
+          npm run cover
         env:
           CI: true
       - name: Upload coverage report
