@@ -1,6 +1,6 @@
 {
   "name": "@jedmao/location",
-  "version": "2.0.4",
+  "version": "3.0.0",
   "description": "A Location class that implements the Location interface of the Web API.",
   "main": "dist/LocationMock.js",
   "module": "dist/esm/LocationMock.js",

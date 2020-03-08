@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0](https://github.com/jedmao/location/compare/v2.0.4...v3.0.0) (2020-03-08)
+
+
+### Features
+
+* provide builds for both cjs and esm ([fd53dca](https://github.com/jedmao/location/commit/fd53dca))
+
+
+### BREAKING CHANGES
+
+* default export removed. use `import { LocationMock } from '@jedmao/location'`.
+
 ## [2.0.4](https://github.com/jedmao/location/compare/v2.0.3...v2.0.4) (2019-09-25)
 
 
