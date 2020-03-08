@@ -1,12 +1,10 @@
-import { WebLocation } from './types'
-
 /**
  * Represents the location (URL) of the object it is linked to.
  * Changes done on it are reflected on the object it relates to.
  * Both the `Document` and `Window` interface have such a linked `Location`,
  * accessible via `Document.location` and `Window.location` respectively.
  */
-class Location extends URL implements WebLocation {
+export class LocationMock extends URL implements Location {
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	public ancestorOrigins = ([] as any) as DOMStringList
 
@@ -52,5 +50,3 @@ class Location extends URL implements WebLocation {
 		this.href = url
 	}
 }
-
-export = Location

@@ -1,14 +1,8 @@
-/* eslint-env browser, node, jest */
-import Location = require('./Location')
+import { LocationMock } from './LocationMock'
 
-describe('Location class', () => {
-	it('exports a CommonJS module', () => {
-		// eslint-disable-next-line @typescript-eslint/no-var-requires
-		expect(require('./Location')).toBe(Location)
-	})
-
+describe(`${LocationMock.name} class`, () => {
 	it('assigns', () => {
-		const loc = new Location('http://foo.bar/')
+		const loc = new LocationMock('http://foo.bar/')
 		const newUrl = 'http://baz.qux/'
 
 		loc.assign(newUrl)
@@ -17,12 +11,12 @@ describe('Location class', () => {
 	})
 
 	it('reloads', () => {
-		const loc = new Location('http://foo.bar/')
+		const loc = new LocationMock('http://foo.bar/')
 		expect(loc.reload()).toBeUndefined()
 	})
 
 	it('replaces', () => {
-		const loc = new Location('http://foo.bar/')
+		const loc = new LocationMock('http://foo.bar/')
 		const newUrl = 'http://baz.qux/'
 
 		loc.replace(newUrl)
@@ -31,18 +25,18 @@ describe('Location class', () => {
 	})
 
 	describe('README examples', () => {
-		const { location: savedLocation } = window
+		const { location: savedLocationMock } = window
 
 		beforeAll(() => {
 			delete window.location
 		})
 
 		beforeEach(() => {
-			window.location = new Location('http://test/')
+			window.location = new LocationMock('http://test/')
 		})
 
 		afterAll(() => {
-			window.location = savedLocation
+			window.location = savedLocationMock
 		})
 
 		it('assigns /login', () => {

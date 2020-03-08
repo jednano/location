@@ -1,7 +1,7 @@
 {
   "env": {
     "es6": true,
-    "node": true
+    "browser": true
   },
   "globals": {
     "fetch": true
@@ -40,5 +40,17 @@
         "allowDestructuring": true
       }
     ]
-  }
+  },
+  "overrides": [
+    {
+      "env": {
+        "node": true,
+        "jest": true
+      },
+      "files": "**/*.test.ts",
+      "rules": {
+        "@typescript-eslint/no-explicit-any": "off"
+      }
+    }
+  ]
 }

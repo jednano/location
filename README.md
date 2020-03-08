@@ -1,7 +1,7 @@
 # @jedmao/location
 
 <!-- markdownlint-disable -->
-[![GitHub Actions](https://github.com/jedmao/location/workflows/master/badge.svg)](https://github.com/jedmao/location/actions)
+[![GitHub Actions](https://github.com/jedmao/location/workflows/Node%20CI/badge.svg?event=push)](https://github.com/jedmao/location/actions)
 [![NPM version](http://img.shields.io/npm/v/@jedmao/location.svg)](https://www.npmjs.org/package/@jedmao/location)
 [![npm license](http://img.shields.io/npm/l/@jedmao/location.svg)](https://www.npmjs.org/package/@jedmao/location)
 [![codecov](https://codecov.io/gh/jedmao/location/branch/master/graph/badge.svg)](https://codecov.io/gh/jedmao/location)
@@ -13,20 +13,20 @@
 
 <!-- markdownlint-disable commands-show-output -->
 
-A `Location` class that extends [`URL`][] and implements the [`Location interface of the Web API`](https://developer.mozilla.org/en-US/docs/Web/API/Location). As always, with first-class TypeScript support!
+A `LocationMock` class that extends [`URL`][] and implements the [`Location interface of the Web API`](https://developer.mozilla.org/en-US/docs/Web/API/Location). As always, with first-class TypeScript support!
 
 ## Installation
 
 ```bash
-npm i @jedmao/location
+npm i --save-dev @jedmao/location
 ```
 
 ## Usage
 
 ```ts
-import Location = require('@jedmao/location')
+import { LocationMock } from '@jedmao/location'
 
-const loc = new Location('http://foo.com/')
+const loc = new LocationMock('http://foo.com/')
 loc.assign('http://bar.com/')
 loc.replace('http://baz.com/')
 loc.reload()
@@ -35,13 +35,13 @@ loc.reload()
 Because this package extends [`URL`][], many features are provided for free. This means you can do this:
 
 ```ts
-new Location('http://jed:secret@test:42/foo?bar=baz#qux')
+new LocationMock('http://jed:secret@test:42/foo?bar=baz#qux')
 ```
 
 Which returns the following object:
 
 ```ts
-Location {
+LocationMock {
   href: 'http://jed:secret@test:42/foo?bar=baz#qux',
   origin: 'http://test:42',
   protocol: 'http:',
@@ -68,7 +68,7 @@ beforeAll(() => {
 })
 
 beforeEach(() => {
-  window.location = new Location('http://test/')
+  window.location = new LocationMock('http://test/')
 })
 
 afterAll(() => {
