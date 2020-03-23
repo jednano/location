@@ -112,7 +112,7 @@
     "jest": "^25",
     "jest-watch-typeahead": "^0.4",
     "lint-staged": "^10",
-    "prettier": "^1",
+    "prettier": "^2",
     "rimraf": "^3",
     "semantic-release": "^17",
     "ts-jest": "^25",
