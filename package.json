@@ -108,7 +108,7 @@
     "cz-conventional-changelog": "^3",
     "eslint": "^6",
     "eslint-config-prettier": "^6",
-    "husky": "^4",
+    "husky": "^6",
     "jest": "^25",
     "jest-watch-typeahead": "^0.5",
     "lint-staged": "^10",
