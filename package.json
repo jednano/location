@@ -97,7 +97,7 @@
   "homepage": "https://github.com/jedmao/location#readme",
   "devDependencies": {
     "@commitlint/cli": "^12",
-    "@commitlint/config-conventional": "^12",
+    "@commitlint/config-conventional": "^13",
     "@jedmao/semantic-release-npm-github-config": "^1",
     "@jedmao/tsconfig": "^0.3",
     "@types/jest": "^26",
